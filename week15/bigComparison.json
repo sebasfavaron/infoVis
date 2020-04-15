@@ -1,0 +1,54 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {
+      "values": [{"Player":"Messi","Values":412,"Category":"Goals"},
+        {"Player":"Ronaldo","Values":416,"Category":"Goals"},
+        {"Player":"Messi","Values":166,"Category":"Assistance"},
+        {"Player":"Ronaldo","Values":130,"Category":"Assistance"},
+        {"Player":"Messi","Values":401,"Category":"Matches"},
+        {"Player":"Ronaldo","Values":393,"Category":"Matches"},
+        {"Player":"Messi","Values":33882,"Category":"Minutes"},
+        {"Player":"Ronaldo","Values":34115,"Category":"Minutes"}]
+    },
+    "layer": [
+      {
+        "mark": "bar",
+        "encoding": {
+          "y": {
+            "field": "Category",
+            "type": "nominal",
+            "axis": {},
+            "title": ""
+          },
+          "x": {
+            "field": "Values",
+            "type": "quantitative",
+            "stack": "normalize",
+            "title": ""
+          },
+          "tooltip": {
+            "field": "Values",
+            "type": "quantitative"
+          },
+          "color": {
+            "field": "Player",
+            "type": "nominal"
+          }
+        }
+      },
+      {
+        "transform": [
+          {"calculate": "0.5", "as": "half"}
+        ],
+        "mark": "rule",
+        "encoding": {
+          "x": {
+            "field": "half",
+            "type": "quantitative"
+          },
+          "color": {"value": "red"},
+          "size": {"value": 0.4}
+        }
+      }
+    ]
+  }

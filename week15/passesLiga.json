@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {
+      "values": [{"Season":"2017","Player":"Messi","Liga_Goals":34,"Liga_Asts":12,"Liga_Aps":36,"Liga_Mins":2996,"CL_Goals":6,"CL_Asts":2,"CL_Aps":10,"CL_Mins":783},
+  {"Season":"2017","Player":"Ronaldo","Liga_Goals":26,"Liga_Asts":5,"Liga_Aps":27,"Liga_Mins":2297,"CL_Goals":15,"CL_Asts":3,"CL_Aps":13,"CL_Mins":1170},
+  {"Season":"2016","Player":"Messi","Liga_Goals":37,"Liga_Asts":9,"Liga_Aps":34,"Liga_Mins":2832,"CL_Goals":11,"CL_Asts":2,"CL_Aps":9,"CL_Mins":810},
+  {"Season":"2016","Player":"Ronaldo","Liga_Goals":25,"Liga_Asts":6,"Liga_Aps":29,"Liga_Mins":2544,"CL_Goals":12,"CL_Asts":5,"CL_Aps":13,"CL_Mins":1200},
+  {"Season":"2015","Player":"Messi","Liga_Goals":26,"Liga_Asts":16,"Liga_Aps":33,"Liga_Mins":2729,"CL_Goals":6,"CL_Asts":1,"CL_Aps":7,"CL_Mins":630},
+  {"Season":"2015","Player":"Ronaldo","Liga_Goals":35,"Liga_Asts":11,"Liga_Aps":36,"Liga_Mins":3184,"CL_Goals":16,"CL_Asts":4,"CL_Aps":12,"CL_Mins":1109},
+  {"Season":"2014","Player":"Messi","Liga_Goals":43,"Liga_Asts":21,"Liga_Aps":38,"Liga_Mins":3375,"CL_Goals":10,"CL_Asts":6,"CL_Aps":13,"CL_Mins":1145},
+  {"Season":"2014","Player":"Ronaldo","Liga_Goals":48,"Liga_Asts":16,"Liga_Aps":35,"Liga_Mins":3096,"CL_Goals":10,"CL_Asts":4,"CL_Aps":12,"CL_Mins":1064},
+  {"Season":"2013","Player":"Messi","Liga_Goals":28,"Liga_Asts":12,"Liga_Aps":31,"Liga_Mins":2498,"CL_Goals":8,"CL_Asts":1,"CL_Aps":7,"CL_Mins":630},
+  {"Season":"2013","Player":"Ronaldo","Liga_Goals":31,"Liga_Asts":11,"Liga_Aps":30,"Liga_Mins":2537,"CL_Goals":17,"CL_Asts":6,"CL_Aps":11,"CL_Mins":991},
+  {"Season":"2012","Player":"Messi","Liga_Goals":46,"Liga_Asts":14,"Liga_Aps":32,"Liga_Mins":2629,"CL_Goals":8,"CL_Asts":3,"CL_Aps":11,"CL_Mins":827},
+  {"Season":"2012","Player":"Ronaldo","Liga_Goals":34,"Liga_Asts":11,"Liga_Aps":34,"Liga_Mins":2716,"CL_Goals":12,"CL_Asts":1,"CL_Aps":12,"CL_Mins":1080},
+  {"Season":"2011","Player":"Messi","Liga_Goals":50,"Liga_Asts":20,"Liga_Aps":37,"Liga_Mins":3270,"CL_Goals":14,"CL_Asts":9,"CL_Aps":11,"CL_Mins":990},
+  {"Season":"2011","Player":"Ronaldo","Liga_Goals":46,"Liga_Asts":13,"Liga_Aps":38,"Liga_Mins":3353,"CL_Goals":10,"CL_Asts":4,"CL_Aps":10,"CL_Mins":930},
+  {"Season":"2010","Player":"Messi","Liga_Goals":31,"Liga_Asts":21,"Liga_Aps":33,"Liga_Mins":2862,"CL_Goals":12,"CL_Asts":4,"CL_Aps":13,"CL_Mins":1050},
+  {"Season":"2010","Player":"Ronaldo","Liga_Goals":40,"Liga_Asts":13,"Liga_Aps":34,"Liga_Mins":2914,"CL_Goals":6,"CL_Asts":4,"CL_Aps":12,"CL_Mins":1018},
+  {"Season":"2009","Player":"Messi","Liga_Goals":34,"Liga_Asts":13,"Liga_Aps":35,"Liga_Mins":2841,"CL_Goals":8,"CL_Asts":0,"CL_Aps":11,"CL_Mins":985},
+  {"Season":"2009","Player":"Ronaldo","Liga_Goals":26,"Liga_Asts":11,"Liga_Aps":29,"Liga_Mins":2462,"CL_Goals":7,"CL_Asts":2,"CL_Aps":6,"CL_Mins":450}]
+    },
+    "mark": {
+      "type": "line",
+      "point": {
+        "filled": false,
+        "tooltip": true,
+        "fill": "white"
+      }
+    },
+    "encoding": {
+      "x": {
+        "field": "Season",
+        "type": "temporal",
+        "timeUnit": "year",
+        "axis": {}
+      },
+      "y": {
+        "field": "Liga_Asts",
+        "type": "quantitative",
+        "axis": {"title": "Liga Passes"}
+      },
+      "color": {"field": "Player", "type": "nominal", "legend": null}
+    }
+}

@@ -2,19 +2,112 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 
 <body>
-    <div id="vis"></div>
+
+    <div class="card">
+        <h3 class="card-header">
+            Let's compare it all (hover for more detail)
+        </h3>
+        <div class="card-body">
+            <div id="vis1"></div>
+            <div class="alert alert-success" role="alert">
+                <a>Messi wins assistance and matches played (+2)</a><br>
+                <a>Ronaldo wins in goals and minutes played (+2)</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="card-header">
+            More detail
+        </h2>
+    </div>
+
+    <div class="card">
+        <h3 class="card-header">
+            Teamwork - How many passes did the stars do?
+        </h3>
+        <div class="card-body">
+            <div id="vis2"></div>
+            <div id="vis3"></div>
+            <div id="vis4"></div>
+            <div class="alert alert-success" role="alert">
+                +1 for Messi!
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3 class="card-header">
+            Goals
+        </h3>
+        <div class="card-body">
+            <div id="vis5"></div>
+            <div id="vis6"></div>
+            <div id="vis7"></div>
+            <div class="alert alert-success" role="alert">
+                +1 for Ronaldo!
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3 class="card-header">
+            Matches - Who played the most games?
+        </h3>
+        <div class="card-body">
+            <div id="vis8"></div>
+            <div id="vis9"></div>
+            <div id="vis10"></div>
+            <div class="alert alert-success" role="alert">
+                +1 for Messi!
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3 class="card-header">
+            Minutes - Who was out there the most?
+        </h3>
+        <div class="card-body">
+            <div id="vis11"></div>
+            <div id="vis12"></div>
+            <div id="vis13"></div>
+            <div class="alert alert-success" role="alert">
+                +1 for Ronaldo!
+            </div>
+        </div>
+    </div>
 
     <script>
-        const spec = "w14.json";
-        vegaEmbed("#vis", spec)
-            // result.view provides access to the Vega View API
-            .then(result => console.log(result))
-            .catch(console.warn);
+        numVis = 0
+        loadVegaLiteVis("bigComparison.json", "#vis" + (++numVis));
+        loadVegaLiteVis("passesLiga.json", "#vis" + (++numVis));
+        loadVegaLiteVis("passesCL.json", "#vis" + (++numVis));
+        loadVegaLiteVis("passes.json", "#vis" + (++numVis));
+        loadVegaLiteVis("goalsLiga.json", "#vis" + (++numVis));
+        loadVegaLiteVis("goalsCL.json", "#vis" + (++numVis));
+        loadVegaLiteVis("mostGoals.json", "#vis" + (++numVis));
+        loadVegaLiteVis("matchesLiga.json", "#vis" + (++numVis));
+        loadVegaLiteVis("matchesCL.json", "#vis" + (++numVis));
+        loadVegaLiteVis("matches.json", "#vis" + (++numVis));
+        loadVegaLiteVis("minutesLiga.json", "#vis" + (++numVis));
+        loadVegaLiteVis("minutesCL.json", "#vis" + (++numVis));
+        loadVegaLiteVis("minutes.json", "#vis" + (++numVis));
+
+        function loadVegaLiteVis(jsonFile, id) {
+            const spec = jsonFile;
+            vegaEmbed(id, spec)
+                // result.view provides access to the Vega View API
+                .then(result => console.log(result))
+                .catch(console.warn);
+        }
     </script>
 </body>
