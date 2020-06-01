@@ -1,0 +1,7 @@
+Las personas con dos o mas nombres aportan al conteo de cantidad de cada nombre por separado. Ej: 'Maria del Pilar' cuenta como una 'Maria' y una 'Pilar' (los 'de' y 'del' se ignoran)
+
+Por la anterior consideracion, la cantidad de 'personas' no es real ya que la suma dara mas que la original
+
+Tambien se agruparon nombres similares solamente diferenciados por sus acentos y se filtraron los nombres con menos de 20 apariciones
+
+Esto reduce la cantidad de nombres de 9761609 a 370824 (12427 nombres unicos si agrupamos todos los anios)
