@@ -8,6 +8,7 @@ unique_names = collections.defaultdict(int)
 def clean_name(name):
     name = unidecode(name)
     name = name.title()
+    name = name.strip()
     return name
 
 
@@ -18,7 +19,7 @@ with open('nombres-full.csv') as f:
         parts = line.split(',')
         if(len(parts) != 3):  # algunos tenian una coma en el nombre y pienso ignorarlos
             continue
-        names = parts[0].split(' ')
+        names = parts[0]
         try:
             amount = int(parts[1])
         except Exception:
@@ -27,14 +28,13 @@ with open('nombres-full.csv') as f:
 
         year = parts[2][:-1]
 
-        for name in names:
-            if(name == ''):
-                continue
-            name = clean_name(name)
-            if(name in unique_names):
-                unique_names[name][year] += amount
-            else:
-                unique_names[name] = collections.defaultdict(int)
+        if(names == ''):
+            continue
+        names = clean_name(names)
+        if(names in unique_names):
+            unique_names[names][year] += amount
+        else:
+            unique_names[names] = collections.defaultdict(int)
 
 
 def sum_ocurrences(values):
@@ -58,4 +58,4 @@ for val in not_names:
 # print all (to use in bash for concatenation)
 for name, values in unique_names.items():
     for year, amount in values.items():
-        print(F'{name},{year},{amount}')
+        print(F'{name},{year},{amount}')  # print csv
