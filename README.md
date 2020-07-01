@@ -2,6 +2,6 @@
 Information Visualization class
 ![GitHub Logo](/img/visualization.png)
 
-Visualizaciones basadas en los challenges semanales de [MakeOverMonday](https://data.world/makeovermonday)
+Varied visualizations using different tools (many originated from the weekly challenges in [MakeOverMonday](https://data.world/makeovermonday))
 
-Para ver las visualizaciones entrar [aqui](https://sebasfavaron.github.io/infoVis/)
+All visualizations are hosted [here](https://sebasfavaron.github.io/infoVis/)
